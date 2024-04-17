@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "blitz_challenge:build:production"
+              "buildTarget": "blitz_challenge:build:production"
             },
             "development": {
-              "browserTarget": "blitz_challenge:build:development"
+              "buildTarget": "blitz_challenge:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "blitz_challenge:build"
+            "buildTarget": "blitz_challenge:build"
           }
         },
         "test": {
@@ -94,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cd174e6b-9786-497c-a07e-1f00d4db60f6"
   }
 }

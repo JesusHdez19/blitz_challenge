@@ -1,0 +1,38 @@
+<div class="bg-container">
+
+    <div class="data-container">
+
+        @if(loadingData){
+            <div class="spinner-container">
+                <div class="spinner"></div>
+            </div>
+        }@else{
+            <div class="current-weather-container">
+                <img class="condition-icon" src="{{weather.current.condition.icon}}" alt="">
+                <p class="location-title">Mi ubicación</p>
+                <p class="location-text">{{weather.location.name}}, {{weather.location.region}}</p>
+                <p class="temp-text">{{weather.current.temp_c}}°</p>
+                <p class="condition-text">{{weather.current.condition.text}}</p>
+            </div>
+
+            <div class="weather-during-day-container">
+                @for(forecast of weather.forecast.forecastday[0].hour; track $index){
+                    <div class="weather-per-hour-container">
+                        <p>{{$index}}</p>
+                        <img class="hour-condition-icon" src="{{forecast.condition.icon}}" alt="">
+                        <p>{{forecast.temp_c | mathRoundNumber }}°</p>
+                    </div>
+                }
+            </div>
+
+            <div class="forecasts-container">
+                @for (forecast of weather.forecast.forecastday; track $index){
+                    <p>weather-page works!</p>
+                }  
+            </div>
+               
+        }
+     
+    </div> 
+</div>
+

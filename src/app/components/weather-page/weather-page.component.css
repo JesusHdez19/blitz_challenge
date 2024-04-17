@@ -1,0 +1,121 @@
+.spinner{
+    border: 10px solid #f2f2f2;
+    border-bottom: 10px solid #6300AD;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}    
+}
+
+.bg-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.data-container{
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spinner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.current-weather-container{
+    border: 2px solid #E3E3E3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 40px 20px;
+    padding: 10px 15px;
+    align-items: center;
+    position: relative;
+    border-radius: 25px;
+    max-width: 600px;
+}
+
+.forecasts-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 40px 20px;
+    padding: 10px 20px;
+}
+
+.weather-during-day-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    overflow-y: scroll;
+    border: 2px solid #E3E3E3;
+    margin: 40px 20px;
+    padding: 10px 15px;
+    align-items: center;
+    position: relative;
+    border-radius: 25px;
+}
+
+.weather-per-hour-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5px;
+    height: auto;
+}
+
+.condition-icon{
+    position: absolute;
+    z-index: 10;
+    left: 5%;
+    top: 5%;
+}
+
+.hour-condition-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.location-title{
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.location-text{
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.temp-text{
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.condition-text{
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
