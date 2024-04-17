@@ -7,11 +7,18 @@
                 <div class="spinner"></div>
             </div>
         }@else{
+            <div class="search-container">
+                <input class="search-input"  [(ngModel)]="location" type="text" placeholder="Ciudad, país o código postal">
+                <button (click)="searchWeather()" class="search-btn"> Buscar</button>
+            </div>
             <div class="current-weather-container">
                 <img class="condition-icon" src="{{weather.current.condition.icon}}" alt="">
                 <p class="location-title">Mi ubicación</p>
                 <p class="location-text">{{weather.location.name}}, {{weather.location.region}}</p>
-                <p class="temp-text">{{weather.current.temp_c}}°</p>
+                <div class="temp-container">
+                    <img class="condition-icon-mobile" src="{{weather.current.condition.icon}}" alt="">
+                    <p class="temp-text">{{weather.current.temp_c}}°</p>
+                </div>
                 <p class="condition-text">{{weather.current.condition.text}}</p>
             </div>
 

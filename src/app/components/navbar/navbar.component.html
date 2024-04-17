@@ -1,10 +1,10 @@
 <div class="bg-navbar-container">
     <div class="data-navbar-container">
-        <img src="../../../assets/icons/casa.png" class="home-icon" alt="">
+        <img (click)="navigationTo('home')" src="../../../assets/icons/casa.png" class="home-icon" alt="">
         <div class="navbar-options-container">
-            <p>Home</p>
-            <p>To Do List</p>
-            <p>Weather</p>
+            <p (click)="navigationTo('home')" [ngClass]="{'navbar-option': !getCurrentPage('home'), 'navbar-option-selected': getCurrentPage('home')}">Home</p>
+            <p (click)="navigationTo('to_do_list')" [ngClass]="{'navbar-option': !getCurrentPage('to_do_list'), 'navbar-option-selected': getCurrentPage('to_do_list')}">Lista</p>
+            <p (click)="navigationTo('weather')" [ngClass]="{'navbar-option': !getCurrentPage('weather'), 'navbar-option-selected': getCurrentPage('weather')}">Clima</p>
         </div>
     </div>
 </div>

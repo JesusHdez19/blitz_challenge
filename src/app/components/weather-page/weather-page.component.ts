@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { DayOfDatePipe } from 'src/app/pipes/day-of-date.pipe';
 import { MathRoundNumberPipe } from 'src/app/pipes/math-round-number.pipe';
 import { WeatherService } from 'src/app/services/weather.service';
@@ -6,7 +7,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 @Component({
   selector: 'app-weather-page',
   standalone: true,
-  imports: [MathRoundNumberPipe, DayOfDatePipe],
+  imports: [MathRoundNumberPipe, DayOfDatePipe, FormsModule],
   templateUrl: './weather-page.component.html',
   styleUrl: './weather-page.component.css'
 })
@@ -28,9 +29,12 @@ export class WeatherPageComponent {
   async getWeather(location: string){
     this.loadingData = true
     await this.weatherApi.getWeather(location).subscribe(data => {
-      console.log(data)
       this.weather = data
       this.loadingData = false
     })
+  }
+
+  searchWeather(){
+    this.getWeather(this.location)
   }
 }

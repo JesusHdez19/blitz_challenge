@@ -7,7 +7,7 @@ import { WeatherPageComponent } from './components/weather-page/weather-page.com
 import { ToDoListPageComponent } from './components/to-do-list-page/to-do-list-page.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent},
+  { path: 'home', component: MainComponent},
   { path: 'weather', component: WeatherPageComponent},
   { path: 'to_do_list', component: ToDoListPageComponent},
   { path: '**', redirectTo: '404' },
