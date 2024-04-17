@@ -26,8 +26,18 @@
             </div>
 
             <div class="forecasts-container">
+                <p class="daily-forecast-title">PRONÓSTICO DIARIO</p>
+                <hr class="horizontal-separator">
                 @for (forecast of weather.forecast.forecastday; track $index){
-                    <p>weather-page works!</p>
+                    
+                    <div class="daily-weather-container">
+                        <p class="day-name">{{forecast.date | dayOfDate}}</p>
+                        <img class="hour-condition-icon" src="{{forecast.day.condition.icon}}" alt="">
+                        <p class="day-min-temp">Min. {{forecast.day.mintemp_c | mathRoundNumber}}°</p>
+                        <p class="day-max-temp">Max. {{forecast.day.maxtemp_c | mathRoundNumber}}°</p>
+                    </div>
+
+                    <hr class="horizontal-separator">   
                 }  
             </div>
                

@@ -12,23 +12,6 @@
     100%{transform: rotate(360deg);}    
 }
 
-.bg-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-
-.data-container{
-    width: 100%;
-    max-width: 1080px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .spinner-container{
     display: flex;
     flex-direction: column;
@@ -43,8 +26,8 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    margin: 40px 20px;
-    padding: 10px 15px;
+    margin: 40px 0 20px 0;
+    /* padding: 10px 15px; */
     align-items: center;
     position: relative;
     border-radius: 25px;
@@ -55,9 +38,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 600px;
     height: auto;
-    margin: 40px 20px;
-    padding: 10px 20px;
+    margin: 40px 0 20px 0;
+    /* padding: 10px 15px; */
+    border: 2px solid #E3E3E3;
+    border-radius: 25px;
 }
 
 .weather-during-day-container{
@@ -68,11 +54,19 @@
     height: auto;
     overflow-y: scroll;
     border: 2px solid #E3E3E3;
-    margin: 40px 20px;
-    padding: 10px 15px;
+    margin: 40px 0px 20px 0;
+    /* padding: 10px 15px; */
     align-items: center;
     position: relative;
     border-radius: 25px;
+}
+
+.daily-weather-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .weather-per-hour-container{
@@ -118,4 +112,40 @@
     margin: 0;
     font-weight: bold;
     font-size: 18px;
+}
+
+.daily-forecast-title{
+    font-size: 12px;
+    opacity: .5;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+
+.horizontal-separator{
+    height: 1px;
+    background-color: black;
+    opacity: .6;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.day-name{
+    width: 60px;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.day-min-temp{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #A8A8A8;
+}
+
+.day-max-temp{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;   
 }

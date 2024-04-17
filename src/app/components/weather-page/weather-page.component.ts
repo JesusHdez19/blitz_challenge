@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { DayOfDatePipe } from 'src/app/pipes/day-of-date.pipe';
 import { MathRoundNumberPipe } from 'src/app/pipes/math-round-number.pipe';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-weather-page',
   standalone: true,
-  imports: [MathRoundNumberPipe],
+  imports: [MathRoundNumberPipe, DayOfDatePipe],
   templateUrl: './weather-page.component.html',
   styleUrl: './weather-page.component.css'
 })

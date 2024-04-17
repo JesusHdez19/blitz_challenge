@@ -1,0 +1,29 @@
+.bg-navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #FEEDED;
+}
+
+.data-navbar-container{
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px;
+}
+
+.navbar-options-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-icon{
+    width: 24px;
+    height: 24px;
+}
