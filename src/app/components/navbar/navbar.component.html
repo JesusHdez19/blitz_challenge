@@ -1,6 +1,6 @@
 <div class="bg-navbar-container">
     <div class="data-navbar-container">
-        <img (click)="navigationTo('home')" src="../../../assets/icons/casa.png" class="home-icon" alt="">
+        <img (click)="navigationTo('')" src="../../../assets/icons/casa.png" class="home-icon" alt="">
         <div class="navbar-options-container">
             <p (click)="navigationTo('to_do_list')" [ngClass]="{'navbar-option': !getCurrentPage('to_do_list'), 'navbar-option-selected': getCurrentPage('to_do_list')}">Lista</p>
             <p (click)="navigationTo('calendar')" [ngClass]="{'navbar-option': !getCurrentPage('calendar'), 'navbar-option-selected': getCurrentPage('calendar')}">Calendario</p>

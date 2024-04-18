@@ -1,1 +1,29 @@
-<p>main works!</p>
+<div class="bg-container">
+    <div class="data-container">
+        <h1>Bienvenido!</h1>
+        <h3>A continuacion podras encontrar una lista de lo que puedes hacer en este lugar</h3>
+        <div class="cards-container">
+            <div (click)="navigationTo('to_do_list')" class="card-container">
+                <img src="../../../assets/imgs/todolist.jpeg" class="img-card"  alt="">
+                <div class="card-data-container">
+                    <p class="title">To do list</p>
+                    <p class="description">Aqui podras agregar tus pendientes del dia y clasificarlos en cosas por hacer, en proceso y terminadas.</p>
+                </div>
+            </div>
+            <div (click)="navigationTo('calendar')"  class="card-container">
+                <img src="../../../assets/imgs/calendar.png" class="img-card"  alt="">
+                <div class="card-data-container">
+                    <p class="title">Calendar</p>
+                    <p class="description">Podras interactuar con un calendario y programar eventos importantes para que no se te olviden.</p>
+                </div>
+            </div>
+            <div (click)="navigationTo('weather')"  class="card-container">
+                <img src="../../../assets/imgs/weather.png" class=" img-card" alt="">
+                <div class="card-data-container">
+                    <p class="title">Clima</p>
+                    <p class="description">Podras ver el clima actual y el de los proximos dias de tu ubicacion o cualquier parte del mundo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

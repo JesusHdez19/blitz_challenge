@@ -8,7 +8,7 @@ import { ToDoListPageComponent } from './components/to-do-list-page/to-do-list-p
 import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
-  { path: 'home', component: MainComponent},
+  { path: '', component: MainComponent},
   { path: 'weather', component: WeatherPageComponent},
   { path: 'to_do_list', component: ToDoListPageComponent},
   { path: 'calendar', component: CalendarComponent},
