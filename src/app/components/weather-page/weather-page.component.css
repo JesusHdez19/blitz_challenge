@@ -27,7 +27,7 @@
     width: 100%;
     height: auto;
     margin: 40px 0 20px 0;
-    /* padding: 10px 15px; */
+    padding: 20px 0;
     align-items: center;
     position: relative;
     border-radius: 25px;
@@ -55,7 +55,7 @@
     overflow-y: scroll;
     border: 2px solid #E3E3E3;
     margin: 40px 0px 20px 0;
-    /* padding: 10px 15px; */
+    padding: 20px 0;
     align-items: center;
     position: relative;
     border-radius: 25px;

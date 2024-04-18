@@ -1,1 +1,79 @@
-<p>to-do-list-page works!</p>
+<div class="bg-container">
+    <div class="data-container">
+        <div class="new-task-container">
+            <mat-card class="pd-10">
+                <form action="" [formGroup] = todoForm class="form-container">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tarea</mat-label>
+                        <input matInput formControlName="item" placeholder="Placeholder">
+                        <mat-icon matSuffix>add_circle</mat-icon>
+                      </mat-form-field>
+                      @if(!isEditEnabled){
+                        <button (click)="addTask()" mat-raised-button color="primary" class="add-task-btn" [disabled]="todoForm.invalid"> Agregar</button>
+                      }@else{
+                        <button (click)="updateTask()" mat-raised-button color="primary" class="add-task-btn" [disabled]="todoForm.invalid"> Actualizar</button>
+                      }
+                      </form>
+            </mat-card>
+        </div>
+        <div class="col-md-12 mt-4">
+            <div cdkDropListGroup>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Por hacer @if(tasks.length > 0){ <span> - {{tasks.length}}</span> }</h2>
+    
+                        <div
+                          cdkDropList
+                          [cdkDropListData]="tasks"
+                          class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          @for (item of tasks; track item) {
+                            <div class="example-box" cdkDrag>{{item.title}}
+                                <div class="box">
+                                    <button mat-icon-button color="warn" (click)="deleteTask($index)"><mat-icon>delete</mat-icon></button>
+                                    <button mat-icon-button color="primary" (click)="editTask(item,$index)"><mat-icon>edit</mat-icon></button>
+                                </div>
+                            </div>
+                          }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>En progreso@if(inProgress.length > 0){ <span> - {{inProgress.length}}</span> }</h2>
+    
+                        <div
+                          cdkDropList
+                          [cdkDropListData]="inProgress"
+                          class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          @for (item of inProgress; track item) {
+                            <div class="example-box" cdkDrag>{{item.title}}
+                                <div class="box">
+                                    <button mat-icon-button color="warn" (click)="deleteInProgressTask($index)"><mat-icon>delete</mat-icon></button>
+                                </div>
+                            </div>
+                          }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Finalizadas@if(doneTasks.length > 0){ <span> - {{doneTasks.length}}</span> }</h2>
+    
+                        <div
+                          cdkDropList
+                          [cdkDropListData]="doneTasks"
+                          class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          @for (item of doneTasks; track item) {
+                            <div class="example-box" cdkDrag>{{item.title}}
+                                <div class="box">
+                                    <button mat-icon-button color="warn" (click)="deleteFinishTask($index)"><mat-icon>delete</mat-icon></button>
+                                    <button mat-icon-button color="primary"><mat-icon>check</mat-icon></button>
+                                </div>
+                            </div>
+                          }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
