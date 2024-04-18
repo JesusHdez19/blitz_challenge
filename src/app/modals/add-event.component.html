@@ -1,0 +1,11 @@
+<div class="add-event-dialog-container">
+    <div style="width: 100%; justify-content: end; align-items: center; display: flex;">
+        <img src="../../assets/icons/close-modal-icon.svg" (click)="close()" style="margin-bottom: 12px; width: 16px; cursor: pointer;" alt=""> 
+    </div>
+    <p class="dialog-title">Agrega el titulo del evento</p>
+    <input class="input-title" type="text" placeholder="Nombre del evento" [(ngModel)]="title">
+    <div class="btns-container">
+        <button (click)="close()" class="btn-cancel">Cancelar</button>
+        <button (click)="confirm()" class="btn-add">Agregar</button>
+    </div>
+</div>

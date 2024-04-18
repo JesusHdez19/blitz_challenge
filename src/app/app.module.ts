@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FullCalendarModule } from "@fullcalendar/angular";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FullCalendarModule,
     NavbarComponent
   ],
   providers: [

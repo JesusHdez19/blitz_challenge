@@ -1,0 +1,70 @@
+.add-event-dialog-container{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    max-width: 456px;
+    height: 100%;
+    padding: 21px;
+}
+
+.dialog-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.02em; 
+    color: #313133;
+    margin: 0 0 8px 0;
+}
+
+.btns-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-title{
+    width: 100%; 
+    max-width: 348px; 
+    padding: 16px 24px;
+    background: #FFFFFF;
+    border: 1px solid rgba(49, 49, 51, 0.3);
+    border-radius: 8px;
+    position: relative;
+    margin: 20px 0;
+}
+
+.btn-cancel{
+    height: 40px;
+    background: red;
+    border: 1px solid red;
+    border-radius: 8px; 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 8px 16px;
+}
+
+.btn-add{
+    height: 40px;
+    background: #0073E1;
+    border: 1px solid #0073E1;
+    border-radius: 8px; 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 8px 24px;
+}
