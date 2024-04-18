@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FullCalendarModule } from '@fullcalendar/angular'
 import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 import { FormsModule } from "@angular/forms";
@@ -24,7 +24,7 @@ export class CalendarComponent {
     plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
     locale: esLocale,
     dateClick: (arg) => this.handleDateClick(arg),
-    // header: {},
+    eventClick: (arg) => this.handleEventClick(arg),
     events: []
   };
 
@@ -32,6 +32,34 @@ export class CalendarComponent {
     this.newEvents = []
   }
 
+  // Eliminar evento
+  handleEventClick(arg: any){
+    const title = arg.event._def.title;
+    
+    let configs;
+    configs = {
+      width: 'auto',
+      height: 'auto', 
+      data: { title: title }  
+    };
+
+    const dialogRef = this.dialog.open(DeleteEventDialogComponent, configs);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result.event === 1){
+        for (var i = 0; i < this.newEvents.length; i++) {
+          if (this.newEvents[i].title == title) {
+            this.newEvents.splice(i, 1);
+            this.calendarOptions.events=[];
+            break;
+          }
+        }
+        this.calendarOptions.events = [...this.newEvents];
+      }
+    });
+  }
+
+  // Agregar evento
   handleDateClick(date: { dateStr: string; }) {
     let configs;
     configs = {
@@ -40,7 +68,7 @@ export class CalendarComponent {
       data: {  }
       
     };
-    const dialogRef = this.dialog.open(AddEventComponent, configs);
+    const dialogRef = this.dialog.open(AddEventDialogComponent, configs);
 
     dialogRef.afterClosed().subscribe(result => {
       if(result.event === 1){
@@ -65,12 +93,36 @@ export class CalendarComponent {
   styleUrls: ['../../modals/add-event.component.css'],
   imports: [FormsModule]
 })
-export class AddEventComponent {
+export class AddEventDialogComponent {
 
   title: string = ''
 
-  constructor(public dialogRef: MatDialogRef<AddEventComponent>){
+  constructor(public dialogRef: MatDialogRef<AddEventDialogComponent>){
 
+  }
+
+  confirm(){
+    this.dialogRef.close({event: 1, title: this.title})
+  }
+  
+  close(){
+    this.dialogRef.close({event: 0})
+  }
+}
+
+@Component({
+  selector: 'delete-event',
+  standalone: true,
+  templateUrl: '../../modals/delete-event.component.html',
+  styleUrls: ['../../modals/add-event.component.css'],
+  imports: [FormsModule]
+})
+export class DeleteEventDialogComponent {
+
+  title: string = ''
+
+  constructor(public dialogRef: MatDialogRef<DeleteEventDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any){
+    this.title = data.title 
   }
 
   confirm(){
