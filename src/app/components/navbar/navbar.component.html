@@ -2,8 +2,8 @@
     <div class="data-navbar-container">
         <img (click)="navigationTo('home')" src="../../../assets/icons/casa.png" class="home-icon" alt="">
         <div class="navbar-options-container">
-            <p (click)="navigationTo('home')" [ngClass]="{'navbar-option': !getCurrentPage('home'), 'navbar-option-selected': getCurrentPage('home')}">Home</p>
             <p (click)="navigationTo('to_do_list')" [ngClass]="{'navbar-option': !getCurrentPage('to_do_list'), 'navbar-option-selected': getCurrentPage('to_do_list')}">Lista</p>
+            <p (click)="navigationTo('calendar')" [ngClass]="{'navbar-option': !getCurrentPage('calendar'), 'navbar-option-selected': getCurrentPage('calendar')}">Calendario</p>
             <p (click)="navigationTo('weather')" [ngClass]="{'navbar-option': !getCurrentPage('weather'), 'navbar-option-selected': getCurrentPage('weather')}">Clima</p>
         </div>
     </div>
