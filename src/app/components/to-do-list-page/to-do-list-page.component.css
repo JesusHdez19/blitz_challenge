@@ -94,3 +94,8 @@
     grid-column-gap: 10px;
 }
   
+.mat-mdc-button.mat-accent,
+.mat-mdc-icon-button.mat-accent,
+.mat-stroked-button.mat-accent{
+    color: #00e676;
+}
